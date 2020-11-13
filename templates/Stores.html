@@ -1,0 +1,46 @@
+
+{% extends "BaseTemplate.html" %}
+
+{% block title %}Stores{% endblock %}
+
+{% block navbar %}
+{{ super() }}
+{% endblock %}
+
+    {% block activity %}
+        <li><a href="{{ url_for('hello_world') }}">Home</a></li>
+        <li><a href="{{ url_for('products') }}">Products</a></li>
+        <li class="active"><a href="{{ url_for('stores') }}">Stores</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li><a href="{{ url_for('cart') }}"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+{% endblock %}
+{% block content %}
+
+    <!--Google map-->
+<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+  <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+    style="border:0" allowfullscreen></iframe>
+</div>
+
+<!--Google Maps-->
+
+
+</div>
+{% endblock %}
+
+{% block foot %}
+{{ super() }}
+{% endblock %}
+
+

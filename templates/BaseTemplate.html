@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"><link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/small-business.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src = "main.js"></script>
+
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+
+    .map-container{
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+}
+
+    .map-container iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+
+    /* Remove the jumbotron's default bottom margin */
+     .jumbotron {
+      margin-bottom: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+    <link rel="stylesheet" href="style.css" />
+    <title>{% block title %}{% endblock %} - Ez Laundry</title>
+{% endblock %}
+        {% block custom %}
+{% endblock %}
+</head>
+
+
+<body onload="welcomeFunction()" >
+
+      <div class="jumbotron">
+  <div class="container text-center">
+    <h1>E-LAUNDRY</h1>
+    <p>Clean clothes made easier than ever</p>
+  </div>
+</div>
+        {% block navbar %}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">EZ</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+      {% endblock %}
+
+{% block activity %}
+        <li class="active"><a href="{{ url_for('hello_world') }}">Home</a></li>
+        <li><a href="{{ url_for('products') }}">Products</a></li>
+        <li><a href="{{ url_for('stores') }}">Stores</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+        <li><a href="{{ url_for('cart') }}"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+            {% endblock %}
+
+      <div id="content">
+          {% block content %}
+
+  <div class="container" style="padding-bottom: 20px">
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="static/Images/laundryz.jpg" alt="" width="600" height ="400">
+      </div>
+
+      <div class="col-lg-5">
+        <h1 class="font-weight-light">EZ LAUNDRY</h1>
+        <p>Laundry is taking too much of your time ? Are you too lazy to wash your clothes ? Are you a student
+        who can't make time to do his laundry ? EZ Laundry is here to save you !</p>
+        <a class="btn btn-primary" href="{{ url_for('products') }}">Choose your plan !</a>
+      </div>
+
+    </div>
+
+
+{#    <!-- Call to Action Well -->#}
+{#    <div class="card text-white bg-secondary my-5 py-4 text-center">#}
+{#      <div class="card-body">#}
+{#        <p class="text-white m-0">Cheap, quick and reliable</p>#}
+{#      </div>#}
+{#    </div>#}
+
+    <!-- Content Row -->
+    <div class="row">
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Cheap</h2>
+            <p class="card-text">We offer the best prices in the market, which certainly beat the cost of washing your
+             clothes at home.</p>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('products') }}" class="btn btn-primary btn-sm">View our offers</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Quick</h2>
+            <p class="card-text">Fresh and clean laundry in less than 24 hours !</p>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('products') }}" class="btn btn-primary btn-sm">View our offers </a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Reliable</h2>
+            <p class="card-text">We use the highest quality detergents and wash each color seperately,
+                so you will have the cleanest clothes in town.</p>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('products') }}" class="btn btn-primary btn-sm">View our offers</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+
+      {% endblock %}
+      </div>
+
+    <div id="footer">
+        {% block footer %}
+      <footer class="container-fluid text-center">
+  <p>Online Store Copyright</p>
+  <form class="form-inline">Get deals:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Sign Up</button>
+  </form>
+        {% endblock %}
+    </div>
+</body>
+</html>

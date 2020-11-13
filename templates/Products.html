@@ -1,0 +1,89 @@
+{% extends "BaseTemplate.html" %}
+
+{% block title %}Products{% endblock %}
+
+{% block navbar %}
+{{ super() }}
+    {% endblock %}
+
+    {% block activity %}
+        <li><a href="{{ url_for('hello_world') }}">Home</a></li>
+        <li class="active"><a href="{{ url_for('products') }}">Products</a></li>
+        <li><a href="{{ url_for('stores') }}">Stores</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li><a href="{{ url_for('cart') }}"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+{% endblock %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"> Trial </div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+          <button class="btn btn-primary" onclick="addToCart()" >Add to cart !</button>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"> Weekly </div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+          <button class="btn btn-primary" onclick="addToCart()">Add to cart !</button>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"> Monthly </div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+          <button class="btn btn-primary" onclick="addToCart()">Add to cart !</button>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Yearly</div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+          <button class="btn btn-primary" onclick="addToCart()">Add to cart !</button>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">5 washes </div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+          <button class="btn btn-primary" onclick="addToCart()">Add to cart !</button>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">50 washes </div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+          <button class="btn btn-primary" onclick="addToCart()">Add to cart !</button>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+{% endblock %}
+
+{% block foot %}
+{{ super() }}
+{% endblock %}

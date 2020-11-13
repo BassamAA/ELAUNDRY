@@ -1,0 +1,50 @@
+{% extends "BaseTemplate.html" %}
+
+{% block custom %}
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+{% endblock %}
+{% block title %}Account{% endblock %}
+
+{% block navbar %}
+{{ super() }}
+    {% endblock %}
+    {% block activity %}
+        <li><a href="{{ url_for('hello_world') }}">Home</a></li>
+        <li><a href="{{ url_for('products') }}">Products</a></li>
+        <li><a href="{{ url_for('stores') }}">Stores</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="{{ url_for('hello_world') }}"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li><a href="{{ url_for('cart') }}"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{% endblock %}
+{% block content %}
+
+<div class="container">
+      <h1>Please login</h1>
+      <br>
+      <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+        <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}" required>
+         <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}" required>
+        <input class="btn btn-default" type="submit" value="Login">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+{% endblock %}
+
+{% block foot %}
+{{ super() }}
+{% endblock %}
+
+
+
